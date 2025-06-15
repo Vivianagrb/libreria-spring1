@@ -63,6 +63,7 @@ public class FacturaRepositoryTestIt {
         assertEquals("FAC-0083", facturaGuardada.getNum_factura());
         assertEquals(115.00, facturaGuardada.getTotal());
     }
+
     @Test
     public void update() {
         Optional<Factura> facturaExistente = facturaRepository.findById(86);
@@ -80,7 +81,7 @@ public class FacturaRepositoryTestIt {
 
         Factura facturaActualizado = facturaRepository.save(facturaExistente.orElse(null));
         assertNotNull(facturaActualizado);
-       assertEquals("FAC000099",facturaActualizado.getNum_factura());
+        assertEquals("FAC000099", facturaActualizado.getNum_factura());
 
     }
 
@@ -91,7 +92,6 @@ public class FacturaRepositoryTestIt {
         }
         assertFalse(facturaRepository.existsById(86), "El id=86 deberia haberse eliminado");
     }
-
 
 
 }
